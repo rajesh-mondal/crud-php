@@ -37,6 +37,13 @@ if ( 'seed' == $task ) {
             ?>
         </div>
     </div>
+    <?php if ( 'report' == $task ): ?>
+    <div class="row">
+        <div class="column column-60 column-offset-20">
+            <?php generateReport(); ?>
+        </div>
+    </div>
+    <?php endif;?>
 </div>
 </body>
 </html>
