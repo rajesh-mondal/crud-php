@@ -1,3 +1,13 @@
+<?php
+require_once "inc/functions.php";
+
+$info = '';
+$task = $_GET['task'] ?? 'report';
+if ( 'seed' == $task ) {
+    seed();
+    $info = "Seeding is complete";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +28,13 @@
         <div class="column column-60 column-offset-20">
             <h2>CRUD Project</h2>
             <p>A sample project to perform CRUD operations using plain files and PHP</p>
+            <?php include_once 'inc/templates/nav.php'?>
+            <hr>
+            <?php
+            if ( $info != '' ) {
+                echo "<p>{$info}</p>";
+            }
+            ?>
         </div>
     </div>
 </div>
